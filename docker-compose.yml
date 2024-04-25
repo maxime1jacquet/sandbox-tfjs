@@ -1,0 +1,12 @@
+# create a docker compose file to run a nodejs app
+version: "3"
+services:
+  nodejs:
+    image: node:20
+    container_name: nodejs
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm i && node index.js"
